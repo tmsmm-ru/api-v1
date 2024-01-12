@@ -19,11 +19,6 @@ class TmSMMApiV1
         return $this->_api('GET', 'profile');
     }
 
-    public function getTasksT1()
-    {
-        return $this->_api('GET', 'tasks/t1');
-    }
-
     public function getTaskT1($id)
     {
         return $this->_api('GET', 'tasks/t1/' . $id);
@@ -44,11 +39,6 @@ class TmSMMApiV1
         return $this->_api('POST', 'tasks/t1/pause', $data);
     }
 
-    public function getTasksT2()
-    {
-        return $this->_api('GET', 'tasks/t2');
-    }
-
     public function getTaskT2($id)
     {
         return $this->_api('GET', 'tasks/t2/' . $id);
@@ -67,11 +57,6 @@ class TmSMMApiV1
     public function pauseTaskT2($data)
     {
         return $this->_api('POST', 'tasks/t2/pause', $data);
-    }
-
-    public function getTasksT3()
-    {
-        return $this->_api('GET', 'tasks/t3');
     }
 
     public function getTaskT3($id)
