@@ -1,6 +1,6 @@
 # Документация к TmSMM API для работы с многофункциональными услугами для Telegram
 
-Получить Class PHP для работы с API можно по ссылке: https://github.com/tmsmm-ru/api-v1/blob/main/TmSMMApiV1.php
+Получить PHP Class для работы с API можно по ссылке: https://github.com/tmsmm-ru/api-v1/blob/main/TmSMMApiV1.php
 
 
 ## #Баланс аккаунта
