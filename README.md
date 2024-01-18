@@ -56,7 +56,7 @@ Array
 
     $oTmSMM = new TmSMMApiV1($token);
 
-    $oTmSMM->createTaskT1([
+    $oTmSMM->createOrderForFollowers([
         'name'    => '', // имя заказа, необязательно
         'channel' => 'https://t.me/username', // ссылка на канал или группу, пример: https://t.me/username или https://t.me/+aH1HSam3SF85ZQEu
         'country' => 0, // страна подписчиков, 0 - любая, 1 - Россия или 2 - англоязычные
@@ -101,7 +101,7 @@ Array
 
     $oTmSMM = new TmSMMApiV1($token);
 
-    $oTmSMM->getTaskT1('65a14353965b7'); // передавать id заказа
+    $oTmSMM->getOrderForFollowers('65a14353965b7'); // передавать id заказа
 ```
 
 ### Пример ответа
@@ -164,7 +164,7 @@ Array
 
     $oTmSMM = new TmSMMApiV1($token);
 
-    $oTmSMM->pauseTaskT1([
+    $oTmSMM->pauseOrderForFollowers([
          'id'     => '65a14353965b7',
          'status' => 1 // установка паузы, 0 - снять с паузы или 1 - установить паузу
     ]);
@@ -202,7 +202,7 @@ Array
 
     $oTmSMM = new TmSMMApiV1($token);
 
-    $oTmSMM->deleteTaskT1('65a14353965b7'); // передавать id заказа
+    $oTmSMM->deleteOrderForFollowers('65a14353965b7'); // передавать id заказа
 ```
 
 ### Пример ответа
@@ -239,7 +239,7 @@ Array
     $oTmSMM = new TmSMMApiV1($token);
 
     // заказ на разовое выполнения просмотров
-    $oTmSMM->createTaskT2([
+    $oTmSMM->createOrderForViews([
         'name'       => '', // имя заказа, необязательно
         'channel'    => 'https://t.me/username', // ссылка на канал или группу, пример: https://t.me/username или https://t.me/+aH1HSam3SF85ZQEu
         'mode'       => 0, // режим просмотров записей, 0 - разовое, 2 - автопросмотры на новые записи
@@ -251,7 +251,7 @@ Array
     ]);
 
     // заказ на автопросмотры на новые записи
-    $oTmSMM->createTaskT2([
+    $oTmSMM->createOrderForViews([
         'name'              => '', // имя заказа, необязательно
         'channel'           => 'https://t.me/username', // ссылка на канал или группу, пример: https://t.me/username или https://t.me/+aH1HSam3SF85ZQEu
         'mode'              => 2, // режим просмотров записей, 0 - разовое, 2 - автопросмотры на новые записи
@@ -297,7 +297,7 @@ Array
 
     $oTmSMM = new TmSMMApiV1($token);
 
-    $oTmSMM->getTaskT2('65a14353965b7'); // передавать id заказа
+    $oTmSMM->getOrderForViews('65a14353965b7'); // передавать id заказа
 ```
 
 ### Пример ответа
@@ -359,7 +359,7 @@ Array
 
     $oTmSMM = new TmSMMApiV1($token);
 
-    $oTmSMM->pauseTaskT2([
+    $oTmSMM->pauseOrderForViews([
          'id'     => '65a14353965b7',
          'status' => 1 // установка паузы, 0 - снять с паузы или 1 - установить паузу
     ]);
@@ -397,7 +397,7 @@ Array
 
     $oTmSMM = new TmSMMApiV1($token);
 
-    $oTmSMM->deleteTaskT2('65a14353965b7'); // передавать id заказа
+    $oTmSMM->deleteOrderForViews('65a14353965b7'); // передавать id заказа
 ```
 
 ### Пример ответа
@@ -434,7 +434,7 @@ Array
 
     $oTmSMM = new TmSMMApiV1($token);
 
-    $oTmSMM->createTaskT3([
+    $oTmSMM->createOrderForVotes([
         'name'      => '', // имя заказа, необязательно
         'channel'   => 'https://t.me/username', // ссылка на канал или группу, пример: https://t.me/username
         'country'   => 0, // страна подписчиков, 0 - любая, 1 - Россия или 2 - англоязычные
@@ -481,7 +481,7 @@ Array
 
     $oTmSMM = new TmSMMApiV3($token);
 
-    $oTmSMM->getTaskT3('65a14353965b7'); // передавать id заказа
+    $oTmSMM->getOrderForVotes('65a14353965b7'); // передавать id заказа
 ```
 
 ### Пример ответа
@@ -546,7 +546,7 @@ Array
 
     $oTmSMM = new TmSMMApiV1($token);
 
-    $oTmSMM->pauseTaskT3([
+    $oTmSMM->pauseOrderForVotes([
          'id'     => '65a14353965b7',
          'status' => 1 // установка паузы, 0 - снять с паузы или 1 - установить паузу
     ]);
@@ -584,7 +584,188 @@ Array
 
     $oTmSMM = new TmSMMApiV1($token);
 
-    $oTmSMM->deleteTaskT3('65a14353965b7'); // передавать id заказа
+    $oTmSMM->deleteOrderForVotes('65a14353965b7'); // передавать id заказа
+```
+
+### Пример ответа
+
+```
+Array
+(
+    [response] => Array
+        (
+            [success] => Array
+                (
+                    [code] => 1
+                    [data] => Array
+                        (
+                        )
+
+                )
+
+        )
+
+)
+```
+
+
+
+## #Создание заказа на старт бота в Telegram
+
+### Пример запроса
+
+```php
+    <?php
+
+    $token = '';
+
+    $oTmSMM = new TmSMMApiV1($token);
+
+    $oTmSMM->createOrderForStartBots([
+        'name'      => '', // имя заказа, необязательно
+        'bot'       => 'https://t.me/username_bot', // ссылка на бота, пример: https://t.me/username_bot
+        'param'     => '1234', // параметр старта бота, если необходим, вином случае оставить пустым поле
+        'country'   => 0, // страна аккаунтов, 0 - любая, 1 - Россия или 2 - англоязычные
+        'sex'       => 0, // пол аккаунтов, 0 - любой, 1 - женский или 2 - мужской
+        'count'     => 10, // количество выполнений
+        'speed'     => 1, // скорость накрутки, 0 - низкая, 1 - средняя, 2 - высокая, 3 - очень низкая или  4 - очень высокая
+        'timeStart' => '', // отложенный запуск, пустой параметр - нет или '31.12.2024 23:00' - формат передачи date_format:"d.m.Y G:i"
+    ]);
+```
+
+### Пример ответа
+
+```
+Array
+(
+    [response] => Array
+        (
+            [success] => Array
+                (
+                    [code] => 1
+                    [data] => Array
+                        (
+                            [id] => 65a14353965b7
+                        )
+
+                )
+
+        )
+
+)
+```
+
+## #Получение информации о заказе на старт бота в Telegram
+
+### Пример запроса
+
+```php
+    <?php
+
+    $token = '';
+
+    $oTmSMM = new TmSMMApiV3($token);
+
+    $oTmSMM->getOrderForStartBots('65a14353965b7'); // передавать id заказа
+```
+
+### Пример ответа
+
+```
+Array
+(
+    [response] => Array
+        (
+            [success] => Array
+                (
+                    [code] => 1
+                    [data] => Array
+                        (
+                            [uniqid] => 65a282f743b00 // id заказа
+                            [name] => Имя заказа // имя заказа
+                            [telegram_id] => 1066197625 // внутрений id в Telegram
+                            [telegram_uri] => @username // username
+                            [telegram_title] => Name channel // имя объекта в Telegram
+                            [start_param] => 1234 // старт параметра
+                            [last_time_run] => 2023-12-06 14:46:30 // время последнего выполнения
+                            [country] => 0 // страна подписчиков
+                            [sex] => 0 // пол голосующих
+                            [speed] => 1 // скорость накрутки
+                            [count] => 10 // заказанное количество выполнений
+                            [count_done] => 0 // текущее количество выполнений
+                            [time_start] => // отложенный запуск
+                            [pause] => 0 // пауза
+                            [status] => 3 // статус заказа
+                        )
+
+                )
+
+        )
+
+)
+```
+
+### Статус заказа
+```
+0 - обрабатывается
+1 - ошибка
+2 - выполнен
+3 - выполняется
+6 - на модерации
+5 - заблокирован
+7 - заблокирован
+```
+
+## #Пауза заказа на старт бота в Telegram
+
+### Пример запроса
+
+```php
+    <?php
+
+    $token = '';
+
+    $oTmSMM = new TmSMMApiV1($token);
+
+    $oTmSMM->pauseOrderForStartBots([
+         'id'     => '65a14353965b7',
+         'status' => 1 // установка паузы, 0 - снять с паузы или 1 - установить паузу
+    ]);
+```
+
+### Пример ответа
+
+```
+Array
+(
+    [response] => Array
+        (
+            [success] => Array
+                (
+                    [code] => 1
+                    [data] => Array
+                        (
+                        )
+
+                )
+
+        )
+
+)
+```
+
+## #Удаление заказа на старт бота в Telegram
+
+### Пример запроса
+
+```php
+    <?php
+
+    $token = '';
+
+    $oTmSMM = new TmSMMApiV1($token);
+
+    $oTmSMM->deleteOrderForStartBots('65a14353965b7'); // передавать id заказа
 ```
 
 ### Пример ответа
