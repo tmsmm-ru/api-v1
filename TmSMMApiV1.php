@@ -19,64 +19,84 @@ class TmSMMApiV1
         return $this->_api('GET', 'profile');
     }
 
-    public function getTaskT1($id)
+    public function getOrderForFollowers($id)
     {
         return $this->_api('GET', 'tasks/t1/' . $id);
     }
 
-    public function createTaskT1($data)
+    public function createOrderForFollowers($data)
     {
         return $this->_api('POST', 'tasks/t1', $data);
     }
 
-    public function deleteTaskT1($id)
+    public function deleteOrderForFollowers($id)
     {
         return $this->_api('DELETE', 'tasks/t1/' . $id);
     }
 
-    public function pauseTaskT1($data)
+    public function pauseOrderForFollowers($data)
     {
         return $this->_api('POST', 'tasks/t1/pause', $data);
     }
 
-    public function getTaskT2($id)
+    public function getOrderForViews($id)
     {
         return $this->_api('GET', 'tasks/t2/' . $id);
     }
 
-    public function createTaskT2($data)
+    public function createOrderForViews($data)
     {
         return $this->_api('POST', 'tasks/t2', $data);
     }
 
-    public function deleteTaskT2($id)
+    public function deleteOrderForViews($id)
     {
         return $this->_api('DELETE', 'tasks/t2/' . $id);
     }
 
-    public function pauseTaskT2($data)
+    public function pauseOrderForViews($data)
     {
         return $this->_api('POST', 'tasks/t2/pause', $data);
     }
 
-    public function getTaskT3($id)
+    public function getOrderForVotes($id)
     {
         return $this->_api('GET', 'tasks/t3/' . $id);
     }
 
-    public function createTaskT3($data)
+    public function createOrderForVotes($data)
     {
         return $this->_api('POST', 'tasks/t3', $data);
     }
 
-    public function deleteTaskT3($id)
+    public function deleteOrderForVotes($id)
     {
         return $this->_api('DELETE', 'tasks/t3/' . $id);
     }
 
-    public function pauseTaskT3($data)
+    public function pauseOrderForVotes($data)
     {
         return $this->_api('POST', 'tasks/t3/pause', $data);
+    }
+
+    public function getOrderForStartBots($id)
+    {
+        return $this->_api('GET', 'tasks/t4/' . $id);
+    }
+
+    public function createOrderForStartBots($data)
+    {
+        return $this->_api('POST', 'tasks/t4', $data);
+    }
+
+    public function deleteOrderForStartBots($id)
+    {
+        return $this->_api('DELETE', 'tasks/t4/' . $id);
+    }
+
+    public function pauseOrderForStartBots($data)
+    {
+        return $this->_api('POST', 'tasks/t4/pause', $data);
     }
 
     private function _api($customRequest, $url = '', $params = [])
