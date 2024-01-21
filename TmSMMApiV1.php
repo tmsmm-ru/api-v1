@@ -29,9 +29,9 @@ class TmSMMApiV1
         return $this->_api('POST', 'tasks/t1', $data);
     }
 
-    public function deleteOrderForFollowers($id)
+    public function cancelOrderForFollowers($id)
     {
-        return $this->_api('DELETE', 'tasks/t1/' . $id);
+        return $this->_api('POST', 'tasks/t1/cancel' . $id);
     }
 
     public function pauseOrderForFollowers($data)
@@ -49,9 +49,9 @@ class TmSMMApiV1
         return $this->_api('POST', 'tasks/t2', $data);
     }
 
-    public function deleteOrderForViews($id)
+    public function cancelOrderForViews($id)
     {
-        return $this->_api('DELETE', 'tasks/t2/' . $id);
+        return $this->_api('POST', 'tasks/t2/cancel' . $id);
     }
 
     public function pauseOrderForViews($data)
@@ -69,9 +69,9 @@ class TmSMMApiV1
         return $this->_api('POST', 'tasks/t3', $data);
     }
 
-    public function deleteOrderForVotes($id)
+    public function cancelOrderForVotes($id)
     {
-        return $this->_api('DELETE', 'tasks/t3/' . $id);
+        return $this->_api('POST', 'tasks/t3/cancel' . $id);
     }
 
     public function pauseOrderForVotes($data)
@@ -89,9 +89,9 @@ class TmSMMApiV1
         return $this->_api('POST', 'tasks/t4', $data);
     }
 
-    public function deleteOrderForStartBots($id)
+    public function cancelOrderForStartBots($id)
     {
-        return $this->_api('DELETE', 'tasks/t4/' . $id);
+        return $this->_api('POST', 'tasks/t4/cancel' . $id);
     }
 
     public function pauseOrderForStartBots($data)
