@@ -164,8 +164,7 @@ Array
 
     $oTmSMM = new TmSMMApiV1($token);
 
-    $oTmSMM->pauseOrderForFollowers([
-         'id'     => '65a14353965b7',
+    $oTmSMM->pauseOrderForFollowers('65a14353965b7', [
          'status' => 1 // установка паузы, 0 - снять с паузы или 1 - установить паузу
     ]);
 ```
@@ -359,8 +358,7 @@ Array
 
     $oTmSMM = new TmSMMApiV1($token);
 
-    $oTmSMM->pauseOrderForViews([
-         'id'     => '65a14353965b7',
+    $oTmSMM->pauseOrderForViews('65a14353965b7', [
          'status' => 1 // установка паузы, 0 - снять с паузы или 1 - установить паузу
     ]);
 ```
@@ -546,8 +544,7 @@ Array
 
     $oTmSMM = new TmSMMApiV1($token);
 
-    $oTmSMM->pauseOrderForVotes([
-         'id'     => '65a14353965b7',
+    $oTmSMM->pauseOrderForVotes('65a14353965b7', [
          'status' => 1 // установка паузы, 0 - снять с паузы или 1 - установить паузу
     ]);
 ```
@@ -727,8 +724,7 @@ Array
 
     $oTmSMM = new TmSMMApiV1($token);
 
-    $oTmSMM->pauseOrderForStartBots([
-         'id'     => '65a14353965b7',
+    $oTmSMM->pauseOrderForStartBots('65a14353965b7', [
          'status' => 1 // установка паузы, 0 - снять с паузы или 1 - установить паузу
     ]);
 ```
