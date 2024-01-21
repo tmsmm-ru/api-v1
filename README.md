@@ -202,7 +202,7 @@ Array
 
     $oTmSMM = new TmSMMApiV1($token);
 
-    $oTmSMM->deleteOrderForFollowers('65a14353965b7'); // передавать id заказа
+    $oTmSMM->cancelOrderForFollowers('65a14353965b7'); // передавать id заказа
 ```
 
 ### Пример ответа
@@ -397,7 +397,7 @@ Array
 
     $oTmSMM = new TmSMMApiV1($token);
 
-    $oTmSMM->deleteOrderForViews('65a14353965b7'); // передавать id заказа
+    $oTmSMM->cancelOrderForViews('65a14353965b7'); // передавать id заказа
 ```
 
 ### Пример ответа
@@ -584,7 +584,7 @@ Array
 
     $oTmSMM = new TmSMMApiV1($token);
 
-    $oTmSMM->deleteOrderForVotes('65a14353965b7'); // передавать id заказа
+    $oTmSMM->cancelOrderForVotes('65a14353965b7'); // передавать id заказа
 ```
 
 ### Пример ответа
@@ -765,7 +765,7 @@ Array
 
     $oTmSMM = new TmSMMApiV1($token);
 
-    $oTmSMM->deleteOrderForStartBots('65a14353965b7'); // передавать id заказа
+    $oTmSMM->cancelOrderForStartBots('65a14353965b7'); // передавать id заказа
 ```
 
 ### Пример ответа
