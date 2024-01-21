@@ -31,12 +31,12 @@ class TmSMMApiV1
 
     public function cancelOrderForFollowers($id)
     {
-        return $this->_api('POST', 'tasks/t1/cancel' . $id);
+        return $this->_api('POST', 'tasks/t1/cancel/' . $id);
     }
 
-    public function pauseOrderForFollowers($data)
+    public function pauseOrderForFollowers($id, $data)
     {
-        return $this->_api('POST', 'tasks/t1/pause', $data);
+        return $this->_api('POST', 'tasks/t1/pause/' . $id, $data);
     }
 
     public function getOrderForViews($id)
@@ -51,12 +51,12 @@ class TmSMMApiV1
 
     public function cancelOrderForViews($id)
     {
-        return $this->_api('POST', 'tasks/t2/cancel' . $id);
+        return $this->_api('POST', 'tasks/t2/cancel/' . $id);
     }
 
-    public function pauseOrderForViews($data)
+    public function pauseOrderForViews($id, $data)
     {
-        return $this->_api('POST', 'tasks/t2/pause', $data);
+        return $this->_api('POST', 'tasks/t2/pause/' . $id, $data);
     }
 
     public function getOrderForVotes($id)
@@ -71,12 +71,12 @@ class TmSMMApiV1
 
     public function cancelOrderForVotes($id)
     {
-        return $this->_api('POST', 'tasks/t3/cancel' . $id);
+        return $this->_api('POST', 'tasks/t3/cancel/' . $id);
     }
 
-    public function pauseOrderForVotes($data)
+    public function pauseOrderForVotes($id, $data)
     {
-        return $this->_api('POST', 'tasks/t3/pause', $data);
+        return $this->_api('POST', 'tasks/t3/pause/' . $id, $data);
     }
 
     public function getOrderForStartBots($id)
@@ -91,12 +91,12 @@ class TmSMMApiV1
 
     public function cancelOrderForStartBots($id)
     {
-        return $this->_api('POST', 'tasks/t4/cancel' . $id);
+        return $this->_api('GET', 'tasks/t4/cancel/' . $id);
     }
 
-    public function pauseOrderForStartBots($data)
+    public function pauseOrderForStartBots($id, $data)
     {
-        return $this->_api('POST', 'tasks/t4/pause', $data);
+        return $this->_api('POST', 'tasks/t4/pause/' . $id, $data);
     }
 
     private function _api($customRequest, $url = '', $params = [])
